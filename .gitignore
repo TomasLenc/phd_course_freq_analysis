@@ -1,3 +1,9 @@
+# output folder with figures
+figures/*
+
+# Mac stuff
+.DS_Store
+
 # Windows default autosave extension
 *.asv
 
