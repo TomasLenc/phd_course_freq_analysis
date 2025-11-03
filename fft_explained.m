@@ -11,6 +11,9 @@ n = [0 : N-1];
 col = [50, 168, 82]/255; 
 linew = 3; 
 
+save_path = 'figures/fft_explained'; 
+mkdir(save_path)
+
 %% generating sine waves
 % In terms of radians per sample. 
 
@@ -187,7 +190,7 @@ pnl.margin = [15, 20, 15, 15];
 
 pnl.fontsize = 16; 
 
-saveas(f, 'figures/weigted_sum_sin_cos.svg'); 
+saveas(f, fullfile(save_path, 'weigted_sum_sin_cos.svg')); 
 
 %% exponential numbers are just a convenient way to do arithmetics with cos and sin
 
@@ -322,7 +325,7 @@ pnl.fontsize = 12;
 % therefore also called "DC" (cominf from direct current in electrical
 % engineering).
 
-saveas(f, 'figures/fft_matrix.svg')
+saveas(f, fullfile(save_path, 'fft_matrix.svg'))
 
 
 % let's plot example random signal (for the figure on slides)
@@ -345,7 +348,7 @@ pnl.de.marginright = 3;
 pnl.margintop = 15; 
 pnl.fontsize = 12; 
 
-saveas(f, 'figures/example_signal.svg')
+saveas(f, fullfile(save_path, 'example_signal.svg'))
 
 
 %% DFT sinewaves in polar coordinates 
@@ -476,8 +479,8 @@ pnl(2).ylabel('s')
 pnl.margin = [20, 20, 5, 5]; 
 pnl.fontsize = 16; 
 
-saveas(f, 'figures/fft_symmetries_cartesian.svg')
-print('figures/fft_symmetries_cartesian.png', '-dpng', '-painters', '-r600', f); 
+saveas(f, fullfile(save_path, 'fft_symmetries_cartesian.svg'))
+print(fullfile(save_path, 'fft_symmetries_cartesian.png'), '-dpng', '-painters', '-r600', f); 
 
 
 % plot magnitude and phase 
@@ -508,8 +511,8 @@ pnl(2).ylabel('phase')
 pnl.margin = [20, 20, 5, 5]; 
 pnl.fontsize = 16; 
 
-saveas(f, 'figures/fft_symmetries_polar.svg')
-print('figures/fft_symmetries_polar.png', '-dpng', '-painters', '-r600', f); 
+saveas(f, fullfile(save_path, 'fft_symmetries_polar.svg'))
+print(fullfile(save_path, 'fft_symmetries_polar.png'), '-dpng', '-painters', '-r600', f); 
 
 
 %% normalizing DFT? 
